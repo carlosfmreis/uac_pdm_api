@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title> Cat Facts </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list lines="full">
+    <ion-item *ngFor="let fact of facts; index as i">
+      <ion-label>{{ i + 1 }}. {{ fact.text }}</ion-label>
+    </ion-item>
+  </ion-list>
+  <div class="button" *ngIf="canShowButton()">
+    <ion-button
+      (click)="onBtnLoadFactsClick()"
+      color="primary"
+      [disabled]="isButtonDisabled"
+      >Load Cat Facts</ion-button
+    >
+  </div>
+</ion-content>
